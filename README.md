@@ -1,6 +1,6 @@
 # 💻 TechByte Solutions — Sistema de Controle de Estoque
 
-**Situação-Problema (MSEP SENAI):** Solução de gerenciamento de inventário de produtos de informática para o terminal local da TechByte Solutions, desenvolvida com boas práticas de Engenharia de Software, desacoplamento total de camadas e os recursos mais recentes do Java SE 25.
+**Situação-Problema:** Solução de gerenciamento de inventário de produtos de informática para o terminal local da TechByte Solutions, desenvolvida com boas práticas de Engenharia de Software, desacoplamento total de camadas e os recursos mais recentes do Java SE 25.
 
 ---
 
