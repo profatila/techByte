@@ -8,7 +8,7 @@
 
 A TechByte Solutions, especializada em suporte e montagem de computadores de alta performance, enfrentava divergências no controle de estoque de hardware (processadores, placas de vídeo, SSDs e memórias). O controle por planilhas causava duplicidade e perdas financeiras.
 
-Este projeto entrega uma **Aplicação Console Robusta** organizada sob os padrões **MVC + Service + Repository**, aplicando o princípio da **Inversão de Dependência (DIP)** do SOLID para garantir baixo acoplamento e facilidade de evolução para futuras interfaces gráficas ou bancos de dados relacionais.
+Este projeto entrega uma **Aplicação Console** organizada sob os padrões **MVC + Service + Repository**, aplicando o princípio da **Inversão de Dependência (DIP)** do SOLID para garantir baixo acoplamento e facilidade de evolução para futuras interfaces gráficas ou bancos de dados relacionais.
 
 ---
 
