@@ -160,4 +160,4 @@ As dependências são invertidas e injetadas em cadeia pelo arquivo `Main.java`,
 
 ## 📝 Licença
 
-Este projeto foi desenvolvido para fins educacionais seguindo a Metodologia SENAI de Educação Profissional (MSEP). Distribuído sob a licença **MIT**.
+Este projeto foi desenvolvido para fins educacionais. Distribuído sob a licença **MIT**.
