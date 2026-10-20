@@ -39,7 +39,7 @@ techbyte-estoque/
                             ├── model/
                             │   └── Produto.java             # Entidade POJO (Atributos e Encapsulamento)
                             ├── repository/
-                            │   ├── ProdutoRepository.java    # Interface (Contrato de Persistência)
+                            │   ├── ProdutoRepository.java       # Interface (Contrato de Persistência)
                             │   └── ProdutoMemoryRepository.java # Implementação Concreta (Lista em RAM)
                             ├── service/
                             │   └── ProdutoService.java       # Lógica e Regras de Negócio
