@@ -112,6 +112,7 @@ classDiagram
     class Main {
         +main(String[] args)$ void
     }
+```mermaid
 
     %% Relacionamentos
     ProdutoMemoryRepository ..|> ProdutoRepository : implementa
