@@ -22,7 +22,7 @@ Este projeto entrega uma **Aplicação Console** organizada sob os padrões **MV
 - [x] **Tratamento Defensivo de Erros:** Prevenção contra preço negativo, IDs inválidos e erros de digitação via terminal.
 
 ---
-
+```mermaid
 classDiagram
     direction TB
 
