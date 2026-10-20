@@ -23,6 +23,107 @@ Este projeto entrega uma **Aplicação Console** organizada sob os padrões **MV
 
 ---
 
+classDiagram
+    direction TB
+
+    namespace model {
+        class Produto {
+            -Long id
+            -String nome
+            -String descricao
+            -BigDecimal preco
+            +Produto()
+            +Produto(Long id, String nome, String descricao, BigDecimal preco)
+            +getId() Long
+            +setId(Long id) void
+            +getNome() String
+            +setNome(String nome) void
+            +getDescricao() String
+            +setDescricao(String descricao) void
+            +getPreco() BigDecimal
+            +setPreco(BigDecimal preco) void
+            +equals(Object o) boolean
+            +hashCode() int
+            +toString() String
+        }
+    }
+
+    namespace repository {
+        class ProdutoRepository {
+            <<interface>>
+            +salvar(Produto produto) Produto
+            +listarTodos() List~Produto~
+            +buscarPorId(Long id) Optional~Produto~
+            +atualizar(Produto produto) boolean
+            +deletar(Long id) boolean
+        }
+
+        class ProdutoMemoryRepository {
+            -List~Produto~ produtos
+            -long proximoId
+            +salvar(Produto produto) Produto
+            +listarTodos() List~Produto~
+            +buscarPorId(Long id) Optional~Produto~
+            +atualizar(Produto produto) boolean
+            +deletar(Long id) boolean
+        }
+    }
+
+    namespace service {
+        class ProdutoService {
+            -ProdutoRepository repository
+            +ProdutoService(ProdutoRepository repository)
+            +cadastrarProduto(String nome, String descricao, BigDecimal preco) Produto
+            +listarProdutos() List~Produto~
+            +buscarPorId(Long id) Optional~Produto~
+            +atualizarProduto(Long id, String nome, String descricao, BigDecimal preco) boolean
+            +removerProduto(Long id) boolean
+            -validarDadosProduto(String nome, BigDecimal preco) void
+        }
+    }
+
+    namespace controller {
+        class ProdutoController {
+            -ProdutoService service
+            +ProdutoController(ProdutoService service)
+            +cadastrarProduto(String nome, String descricao, BigDecimal preco) Produto
+            +listarProdutos() List~Produto~
+            +buscarPorId(Long id) Optional~Produto~
+            +atualizarProduto(Long id, String nome, String descricao, BigDecimal preco) boolean
+            +removerProduto(Long id) boolean
+        }
+    }
+
+    namespace view {
+        class ProdutoConsoleView {
+            -ProdutoController controller
+            -Scanner scanner
+            +ProdutoConsoleView(ProdutoController controller)
+            +iniciar() void
+            -exibirMenu() void
+            -cadastrar() void
+            -listar() void
+            -buscarPorId() void
+            -atualizar() void
+            -remover() void
+        }
+    }
+
+    class Main {
+        +main(String[] args)$ void
+    }
+
+    %% Relacionamentos
+    ProdutoMemoryRepository ..|> ProdutoRepository : implementa
+    ProdutoMemoryRepository "1" o-- "*" Produto : armazena
+    ProdutoService "1" --> "1" ProdutoRepository : aciona via interface
+    ProdutoController "1" --> "1" ProdutoService : orquestra
+    ProdutoConsoleView "1" --> "1" ProdutoController : invoca
+    Main ..> ProdutoMemoryRepository : instancia
+    Main ..> ProdutoService : injeta
+    Main ..> ProdutoController : injeta
+    Main ..> ProdutoConsoleView : injeta
+
 ## 🏗️ Arquitetura do Sistema
 
 O projeto foi construído respeitando a divisão de responsabilidades em **5 Camadas Distintas**:
