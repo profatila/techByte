@@ -76,9 +76,9 @@ As dependências são invertidas e injetadas em cadeia pelo arquivo `Main.java`,
  │  ProdutoRepository   │ (Interface / Abstração)
  └──────────▲───────────┘
             │ Implementa
- ┌──────────┴───────────┐
+ ┌──────────┴────────────┐
  │ProdutoMemoryRepository│ (Armazenamento em Memória RAM)
- └──────────────────────┘
+ └───────────────────────┘
             ▲
             │ Trafega
  ┌──────────┴───────────┐
